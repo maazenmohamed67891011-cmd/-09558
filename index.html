@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroHub</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    overflow-x: hidden;
+    color: #fff;
+    perspective: 1000px;
+    height: 100vh;
+  }
+
+  .bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    background: linear-gradient(270deg, #2c2c2c, #5d4037, #3e2723, #000000);
+    background-size: 600% 600%;
+    animation: moveBg 20s ease infinite;
+  }
+
+  @keyframes moveBg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  header {
+    text-align: center;
+    padding: 30px;
+    font-size: 45px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff9800, #ffc107, #ff5722);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s infinite linear;
+    text-shadow: 0 0 10px #ff9800, 0 0 20px #ff5722;
+    z-index: 2;
+    position: relative;
+  }
+
+  @keyframes shine {
+    0% { background-position: -200px; }
+    100% { background-position: 200px; }
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .card {
+    background: rgba(33, 33, 33, 0.9);
+    border: 2px solid #ff9800;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+
+  .card img { width: 100%; display: block; }
+  .card-body { padding: 15px; text-align: center; }
+
+  .card-body h3 {
+    margin: 10px 0;
+    font-size: 22px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ffcc80, #fff, #ffcc80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 3s infinite alternate;
+    text-shadow: 0 0 5px #ff9800, 0 0 15px #ff5722;
+  }
+
+  @keyframes glowText {
+    from { text-shadow: 0 0 5px #ff9800; }
+    to { text-shadow: 0 0 25px #fff, 0 0 35px #ff5722; }
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff9800, 0 0 20px #ff5722;
+  }
+
+  .btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 0 25px #ff9800, 0 0 45px #ff5722, 0 0 60px #fff;
+  }
+
+  .btn:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.4), transparent);
+    transform: rotate(45deg) translateX(-100%);
+    transition: 0.5s;
+  }
+
+  .btn:hover:after { transform: rotate(45deg) translateX(200%); }
+
+  .particle {
+    position: absolute;
+    width: 6px; height: 6px;
+    background: #ffcc80;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fly 0.8s forwards;
+  }
+
+  @keyframes fly {
+    from { transform: translate(0,0) scale(1); opacity: 1; }
+    to { transform: translate(var(--x), var(--y)) scale(0.5); opacity: 0; }
+  }
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: starMove linear infinite;
+  }
+
+  @keyframes starMove {
+    0% { transform: translateY(0); opacity: 0.8; }
+    100% { transform: translateY(1000px); opacity: 0; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="bg-container"></div>
+
+<header>⚡ ElectroHub ⚡</header>
+
+<section class="products">
+  <div class="card">
+    <img src="https://via.placeholder.com/400x220/3e2723/ffffff?text=بروجيكتور+للألعاب" alt="بروجيكتور عارض للألعاب">
+    <div class="card-body">
+      <h3>بروجيكتور عارض للألعاب</h3>
+      <a class="btn" href="https://damenkom-orders.com?id=d66f2cb7-da86-4bec-9ef6-10339c344a32" target="_blank">اشترِ الآن</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/400x220/212121/ffffff?text=أتاري+الترند" alt="أتاري الترند">
+    <div class="card-body">
+      <h3>أتاري الترند</h3>
+      <a class="btn" href="https://damenkom-orders.com?id=47d78055-31ab-4c08-b62f-4a19f8459b39" target="_blank">اشترِ الآن</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/400x220/000000/ffffff?text=عربية+متشقلبة" alt="عربية متشقلبة">
+    <div class="card-body">
+      <h3>عربية متشقلبة</h3>
+      <a class="btn" href="https://damenkom-orders.com?id=35803f5d-bbba-4e2d-923f-e2f0d25d4959" target="_blank">اشترِ الآن</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/400x220/5d4037/ffffff?text=أتاري+PS5" alt="جهاز أتاري بشكل بلايستيشن 5">
+    <div class="card-body">
+      <h3>جهاز أتاري بشكل بلايستيشن 5</h3>
+      <a class="btn" href="https://damenkom-orders.com?id=8eb88c22-610c-472c-847c-5a42e6d476f1" target="_blank">اشترِ الآن</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/400x220/4e342e/ffffff?text=نينتندو+بذراعين" alt="أتاري نينتندو مزود بذراعين">
+    <div class="card-body">
+      <h3>أتاري نينتندو مزود بذراعين</h3>
+      <a class="btn" href="https://damenkom-orders.com?id=ee4413fc-1dc5-438e-9311-d7a23fea946d" target="_blank">اشترِ الآن</a>
+    </div>
+  </div>
+</section>
+
+<audio id="clickSound" src="https://www.soundjay.com/buttons/button-09.mp3" preload="auto"></audio>
+
+<script>
+  // نجوم الخلفية
+  for(let i=0;i<150;i++){
+    const star = document.createElement("div");
+    star.classList.add("star");
+    star.style.left = Math.random()*100+"%";
+    star.style.top = Math.random()*100+"%";
+    star.style.animationDuration = (Math.random()*5+5)+"s";
+    star.style.width = star.style.height = (Math.random()*2+1)+"px";
+    document.body.appendChild(star);
+  }
+
+  // زرار + صوت + انفجار
+  const buttons = document.querySelectorAll(".btn");
+  const sound = document.getElementById("clickSound");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      const href = this.getAttribute("href");
+      sound.currentTime = 0;
+      sound.play();
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement("span");
+        particle.classList.add("particle");
+        const x = (Math.random() - 0.5) * 300 + "px";
+        const y = (Math.random() - 1) * 300 + "px";
+        particle.style.setProperty("--x", x);
+        particle.style.setProperty("--y", y);
+        this.appendChild(particle);
+        setTimeout(()=> particle.remove(), 1000);
+      }
+      setTimeout(()=> { window.location.href = href; },2000);
+    });
+  });
+
+  // Parallax الخلفية
+  const bg = document.querySelector(".bg-container");
+  document.addEventListener("mousemove", e => {
+    const x = e.clientX / window.innerWidth - 0.5;
+    const y = e.clientY / window.innerHeight - 0.5;
+    bg.style.transform = `translate(${x*30}px, ${y*30}px) scale(1.1)`;
+  });
+
+  // 3D hover للكروت
+  const cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width/2;
+      const y = e.clientY - rect.top - rect.height/2;
+      card.style.transform = `rotateY(${x/10}deg) rotateX(${-y/10}deg) translateZ(0)`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    });
+  });
+</script>
+</body>
+</html>
